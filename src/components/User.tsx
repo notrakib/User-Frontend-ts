@@ -5,7 +5,7 @@ import UserTable from "./User/UserTable";
 import UserTableHeader from "./User/UserTableTitle";
 import UserTableFooter from "./User/UserTableFooter";
 
-interface User {
+interface UserType {
   id: number;
   first_name: string;
   last_name: string;
@@ -62,7 +62,7 @@ const User = () => {
             <p className="w-[20%] text-sm text-slate-500">Status</p>
           </div>
 
-          {data?.data?.map((each: User) => {
+          {data?.data?.map((each: UserType) => {
             return <UserTable key={each.id} data={each} />;
           })}
 

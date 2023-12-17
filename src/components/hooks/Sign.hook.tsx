@@ -10,10 +10,6 @@ interface Error {
   pass?: boolean;
 }
 
-interface Response {
-  data: { id?: number; token: string };
-}
-
 const SignHook = () => {
   const navigate = useNavigate();
   const [sign_up] = useSignUpMutation();

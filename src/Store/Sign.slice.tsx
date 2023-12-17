@@ -11,6 +11,13 @@ const initialState: InitialState = {
   token: null,
 };
 
+export interface RootState {
+  auth: {
+    signed_in: boolean;
+    token?: string;
+  };
+}
+
 const signSlice = createSlice({
   name: "auth",
   initialState,

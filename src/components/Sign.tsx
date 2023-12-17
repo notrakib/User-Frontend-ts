@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { MutableRefObject, useRef } from "react";
+import { useRef } from "react";
 import SignHook from "./hooks/Sign.hook";
 
 const Sign = (props: { meta: boolean }) => {
@@ -12,6 +12,18 @@ const Sign = (props: { meta: boolean }) => {
     emailRef.current.value = "";
     passRef.current.value = "";
     !props.meta ? navigate("/sign-up") : navigate("/sign-in");
+  };
+
+  const formSubmitHandaler = () => {
+    if (props.meta) {
+      signUpHandaler(emailRef.current.value, passRef.current.value);
+      emailRef.current.value = "";
+      passRef.current.value = "";
+    } else {
+      signInHandaler(emailRef.current.value, passRef.current.value);
+      emailRef.current.value = "";
+      passRef.current.value = "";
+    }
   };
 
   return (
@@ -57,13 +69,7 @@ const Sign = (props: { meta: boolean }) => {
         </p>
 
         <button
-          onClick={
-            props.meta
-              ? () =>
-                  signUpHandaler(emailRef.current.value, passRef.current.value)
-              : () =>
-                  signInHandaler(emailRef.current.value, passRef.current.value)
-          }
+          onClick={formSubmitHandaler}
           className="w-full h-12 bg-[#6941c6] text-white text-lg font-bold rounded-lg mt-7"
         >
           {props.meta ? "Sign Up" : "Sign In"}
