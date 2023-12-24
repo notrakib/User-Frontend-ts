@@ -17,12 +17,16 @@ const Sign = (props: { meta: boolean }) => {
   const formSubmitHandaler = () => {
     if (props.meta) {
       signUpHandaler(emailRef.current.value, passRef.current.value);
-      emailRef.current.value = "";
-      passRef.current.value = "";
+      if (!error.email && !error.pass) {
+        emailRef.current.value = "";
+        passRef.current.value = "";
+      }
     } else {
       signInHandaler(emailRef.current.value, passRef.current.value);
-      emailRef.current.value = "";
-      passRef.current.value = "";
+      if (!error.email && !error.pass) {
+        emailRef.current.value = "";
+        passRef.current.value = "";
+      }
     }
   };
 
