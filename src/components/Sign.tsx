@@ -32,7 +32,7 @@ const Sign = (props: { meta: boolean }) => {
 
   return (
     <div className="flex h-screen justify-center items-center">
-      <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg w-1/4 pt-16 pb-16 pr-14 pl-14">
+      <div className="shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg w-[35%] pt-16 pb-16 pr-14 pl-14">
         <div className="flex flex-row">
           <img src="/icons/icons8-stack-100.png" width={35} alt="None" />
           <p className="text-3xl font-bold ml-2 text-gray-500">Stack</p>
@@ -49,6 +49,7 @@ const Sign = (props: { meta: boolean }) => {
         >
           <input
             ref={emailRef}
+            defaultValue="eve.holt@reqres.in"
             className="w-full p-2.5 pl-4 outline-none rounded-lg border-[1px] border-purple-400"
           ></input>
         </div>
@@ -65,6 +66,7 @@ const Sign = (props: { meta: boolean }) => {
           <input
             ref={passRef}
             type="password"
+            defaultValue="cityslicka"
             className="w-full p-2.5 pl-4 outline-none rounded-lg border-[1px] border-purple-400"
           ></input>
         </div>
